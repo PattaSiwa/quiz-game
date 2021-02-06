@@ -18,10 +18,11 @@ cursor: pointer;
 
 .modalContent {
     background-color: aquamarine;
-    font-size: 1rem;
-    margin: 25% auto;
+    font-size: 2rem;
+    margin: 10% auto;
     padding: 20px;
     width: 60%;
+    height: 30%;
     border-radius: 10px;
     -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
@@ -41,4 +42,8 @@ cursor: pointer;
 }
 .closeBtn:hover {
     cursor: pointer;
+}
+
+#helpMe {
+    float:right;
 }

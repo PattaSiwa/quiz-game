@@ -1,0 +1,40 @@
+main {
+    width: 80%;
+    margin:auto;
+}
+
+img {
+    width: 300px;
+    height:300px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.questionContainer h2{
+    text-align: center;
+    height: 20%;
+}
+
+.quizContainer {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.pictureContainer {
+    height: 50%;
+    width: 80%;
+    margin: auto;
+}
+
+/* answers */
+
+.answersContainer {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.answer{
+    width: 40%;
+    margin-top: 20px;
+}

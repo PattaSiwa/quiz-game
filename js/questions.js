@@ -3,9 +3,10 @@
 
 //create an array of possible answers
 
-const possibleAnswers = ['JellyFish', 'Turtle', 'Octopus', 'Sword-Fish', 'Squid', 'Shark']
+const possibleAnswers = ['Jellyfish', 'Turtle', 'Octopus', 'Sword-Fish', 'Squid', 'Shark']
 
 class Question {
+    //will take in the 3 arguments to create a question class. 1) the question itself 2) the corresponding image that's in the img folder(prefixed) 3) the correct answer to the question.
     constructor(question, img, correctAnswer) {
         this.question = question
         this.img = `img/` + img
@@ -32,7 +33,5 @@ class Question {
 
 }
 
-const question1 = new Question("What is this animal?", '1.jpeg', 'JellyFish')
+const question1 = new Question("What is this animal?", '1.jpeg', 'Jellyfish')
 
-question1.makeAnswerKeys()
-console.log(question1.answers)

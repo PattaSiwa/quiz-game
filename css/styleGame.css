@@ -18,6 +18,7 @@ img {
 }
 
 .quizContainer {
+    max-width: 600px;
     width: 70%;
     margin: 0 auto;
     padding-top: 30px;
@@ -52,6 +53,17 @@ img {
     cursor: not-allowed;
 }
 
+.feedbackContainer{
+    height: 40px;
+    margin: 0;
+    text-align: center;
+}
+
+.feedback {
+    margin: auto;
+    font-size: 20px;
+}
+
 @media only screen and (max-width: 640px) {
 
 body {
@@ -70,6 +82,11 @@ main {
 .pictureContainer{
     width: 100%;
     margin: 0;
+}
+
+img {
+    width: 200px;
+    height: 200px;
 }
 
 }

@@ -37,4 +37,8 @@ const question1 = new Question("What is this animal?", '1.jpeg', 'Jellyfish')
 
 const question2 = new Question("What is this animal?", '2.jpeg', 'Shark')
 
-const questionsArray = [question1, question2]
+const question3 = new Question("What is this animal?", '3.jpeg', 'Turtle')
+
+
+
+const questionsArray = [question1, question2, question3]

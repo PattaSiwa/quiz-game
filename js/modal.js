@@ -1,10 +1,11 @@
 //Start Modal
 const startBtn = document.querySelector('#startQuiz')
 
-// startBtn.addEventListener('click', () => {
-//     document.querySelector('#startModal').style.display = 'none'
+startBtn.addEventListener('click', () => {
+    document.querySelector('#startModal').style.display = 'none'
+    startQuiz()
 
-// })
+})
 
 
 //Help Modal 
@@ -24,7 +25,17 @@ closeBtn.addEventListener('click', () => {
 const restartBtn = document.querySelector('.restartQuiz')
 // there will be another restart button --- note to make sure don't mix them up
 
-// restartBtn.addEventListener('click', () => {
-//    
-// })
+restartBtn.addEventListener('click', () => {
+    document.querySelector('#helpModal').style.display = 'none'
+    restartQuiz()
+})
 
+
+
+//endModal 
+const retakeBtn = document.querySelector('#retakeQuiz')
+
+retakeBtn.addEventListener('click', () => {
+    document.querySelector('#endModal').style.display = 'none'
+    restartQuiz()
+})

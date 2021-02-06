@@ -6,7 +6,8 @@ const checkAnswer = (event) => {
         alert('Your answer was correct!')
         //then this can fire the next question
         if (numberOfQuestion === randQuestions.length - 1) {
-            alert('game over!')
+            const endModal = document.querySelector('#endModal')
+            endModal.style.display = 'block';
         } else {
 
             correctAnswer()

@@ -11,8 +11,20 @@ const startQuiz = () => {
     quizDisplay(randQuestions[numberOfQuestion])
 }
 
-//if the answer is correct then we can move on to the next question. 
+const restartQuiz = () => {
+    numberOfQuestion = 0
+    randQuestions = []
+    currentQuestion = {}
+    randQuestions = shuffleArray(questionsArray)
+    currentQuestion = randQuestions[numberOfQuestion]
+    quizDisplay(randQuestions[numberOfQuestion])
 
+    for (let answer of answers) {
+        answer.removeAttribute('disabled')
+    }
+}
+
+//if the answer is correct then we can move on to the next question. 
 const correctAnswer = () => {
     numberOfQuestion++
     currentQuestion = randQuestions[numberOfQuestion]
@@ -23,4 +35,6 @@ const correctAnswer = () => {
     }
 }
 
-startQuiz()
+
+
+

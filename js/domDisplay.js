@@ -16,7 +16,7 @@ const quizDisplay = (quest) => {
     picture.setAttribute('src', quest.img)
     //append the picture to the picture container
     picContainer.appendChild(picture)
-    //shuffle the arrays around before displaying it
+    //shuffle the arrays before displaying
     const shuffledAnswer = shuffleArray(quest.answers)
     let i = 0
     for (let answer of answers) {

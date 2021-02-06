@@ -26,8 +26,6 @@ const quizDisplay = (quest) => {
 
 }
 
-quizDisplay(question1)
-
 // run checkAnswer on each button
 for (let answer of answers) {
     answer.addEventListener('click', checkAnswer)

@@ -35,3 +35,6 @@ class Question {
 
 const question1 = new Question("What is this animal?", '1.jpeg', 'Jellyfish')
 
+const question2 = new Question("What is this animal?", '2.jpeg', 'Shark')
+
+const questionsArray = [question1, question2]

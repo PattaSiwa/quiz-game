@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styleModal.css">
+    <link rel="stylesheet" href="css/styleGame.css">
     <title>Quiz Game</title>
 </head>
 
@@ -13,9 +14,23 @@
     <div id="startModal" class="modal">
         <div class="modalContent">
             <p>Can I Quiz You on Ocean Facts?</p>
-            <button id="quizStart">Start Quiz</button>
+            <button id="startQuiz">Start Quiz</button>
         </div>
     </div>
+
+    <button id="helpMe">Need Help?</button>
+    <div id="helpModal" class="modal">
+        <div class="modalContent">
+            <span class="closeBtn">&times;</span>
+            <ul>
+                <li>Answer by clicking one of the multiple choices</li>
+                <li>Restart the quiz by clicking the button below</li>
+            </ul>
+            <button class="restartQuiz">Restart Quiz</button>
+        </div>
+    </div>
+
+
 
     <script src="js/app.js"></script>
     <script src="js/modal.js"></script>

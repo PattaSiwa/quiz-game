@@ -8,6 +8,7 @@ const answers = document.querySelectorAll('.answer')
 const userFeedback = document.querySelector('.feedback')
 const endModal = document.querySelector('#endModal')
 const quizContainer = document.querySelector('.quizContainer')
+const yourScore = document.querySelector('#yourScore')
 
 //game object
 
@@ -81,7 +82,7 @@ const correctAnswer = () => {
 
 const checkAnswer = (event) => {
     if (event.target.textContent === quizGame.currentQuestion.correctAnswer) {
-        //then this can fire the next question
+        //check if the game is over
         if (quizGame.numberOfQuestion === quizGame.randQuestions.length - 1) {
             endModal.style.display = 'block';
             quizContainer.style.display = 'none';
@@ -91,6 +92,9 @@ const checkAnswer = (event) => {
             quizGame.totalScore += quizGame.currentScore
             userFeedback.innerText = "That's correct! You got" + ` ${quizGame.currentScore} points!`
             //then reset all the buttons and currentScore to 100
+            //update yourScore
+            yourScore.textContent = `Your Score: ${quizGame.totalScore} points`
+
             quizGame.currentScore = 100
             for (let answer of answers) {
                 answer.setAttribute('disabled', 'true')
@@ -128,6 +132,7 @@ const restartQuiz = () => {
     for (let answer of answers) {
         answer.removeAttribute('disabled')
     }
+    yourScore.textContent = "Your Score:"
     startQuiz()
 }
 

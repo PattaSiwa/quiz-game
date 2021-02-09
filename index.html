@@ -14,7 +14,11 @@
     <!-- commenting out for now -->
     <div id="startModal" class="modal">
         <div class="modalContent">
-            <p>Can I Quiz You on Ocean Facts?</p>
+            <div class="welcome">
+                <p>Welcome to the Quiz Game!</p>
+                <p>Can I Quiz You on Ocean Facts?</p>
+            </div>
+
             <button id="startQuiz">Start Quiz</button>
         </div>
     </div>
@@ -35,19 +39,20 @@
         <div class="modalContent">
 
             <h3>Nice Job Finishing the quiz!</h3>
-            <h3>Your Score is:</h3>
+            <h3>You Got</h3>
             <h3 id="score"></h3>
             <button id="retakeQuiz">Take The Quiz Again!</button>
         </div>
     </div>
 
     <main>
-        <div>
-            <button id="helpMe">Need Help?</button>
-        </div>
-        <br>
+
+
 
         <div class="quizContainer">
+            <div id="helpMeContainer">
+                <button id="helpMe">Need Help?</button>
+            </div>
             <div class="questionContainer">
                 <h2 id="question"> </h2>
             </div>

@@ -7,6 +7,7 @@ const picture = document.createElement('img')
 const answers = document.querySelectorAll('.answer')
 const userFeedback = document.querySelector('.feedback')
 const endModal = document.querySelector('#endModal')
+const quizContainer = document.querySelector('.quizContainer')
 
 //game object
 
@@ -58,6 +59,7 @@ const shuffleArray = function (array) {
 
 
 const startQuiz = () => {
+    quizContainer.style.display = 'block'
     quizGame.randQuestions = shuffleArray(questionsArray)
     quizGame.currentQuestion = quizGame.randQuestions[quizGame.numberOfQuestion]
     quizDisplay(quizGame.currentQuestion)
@@ -82,7 +84,8 @@ const checkAnswer = (event) => {
         //then this can fire the next question
         if (quizGame.numberOfQuestion === quizGame.randQuestions.length - 1) {
             endModal.style.display = 'block';
-            document.querySelector('#score').textContent = quizGame.totalScore
+            quizContainer.style.display = 'none';
+            document.querySelector('#score').textContent = quizGame.totalScore + " points!"
         } else {
             //give currentScore points to the totalScore and let user know how much they got
             quizGame.totalScore += quizGame.currentScore
@@ -98,9 +101,9 @@ const checkAnswer = (event) => {
         }
 
     } else { // this happens when answer is incorrect
-        const feedback = document.querySelector('.feedback')
-        const feedbacks = ["Oh no that's incorrect!let's try again!", "Not quite! let's try again!", "Not what we're looking for, let's try again!"]
-        feedback.innerText = feedbacks[Math.floor(Math.random() * feedbacks.length)]
+
+        const feedbacks = ["Oh no that's incorrect! let's try again!", "Not quite! let's try again!", "Not what we're looking for, let's try again!", "That's a good guess! but not what we're looking for"]
+        userFeedback.innerText = feedbacks[Math.floor(Math.random() * feedbacks.length)]
         //turn the button off after you guessed wrong answer
         event.target.setAttribute('disabled', 'true')
         //minus 25 points to the current score
@@ -119,6 +122,8 @@ const restartQuiz = () => {
     quizGame.randQuestions = []
     quizGame.currentQuestion = {}
     quizGame.randQuestions = shuffleArray(questionsArray)
+    quizGame.currentScore = 100
+    quizGame.totalScore = 0
     userFeedback.innerText = "Pick an answer below"
     for (let answer of answers) {
         answer.removeAttribute('disabled')

@@ -1,3 +1,5 @@
+//These modals are the control flow of the game
+
 //Start Modal
 const startBtn = document.querySelector('#startQuiz')
 

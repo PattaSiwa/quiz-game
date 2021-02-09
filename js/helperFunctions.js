@@ -78,27 +78,36 @@ const correctAnswer = () => {
     }
 }
 
-//check if the answer is correct then call correct
+const disableAnswers = () => {
+    for (let answer of answers) {
+        answer.setAttribute('disabled', 'true')
+    }
+}
 
+//check if the answer is correct then call correct
 const checkAnswer = (event) => {
     if (event.target.textContent === quizGame.currentQuestion.correctAnswer) {
+
+        //give currentScore points to the totalScore and let user know how much they got
+        quizGame.totalScore += quizGame.currentScore
+        userFeedback.innerText = "That's correct! You got" + ` ${quizGame.currentScore} points!`
+        //turn off the answer key
+        disableAnswers()
+        //update scoreboard
+        yourScore.textContent = `Your Score: ${quizGame.totalScore} points`
+
         //check if the game is over
         if (quizGame.numberOfQuestion === quizGame.randQuestions.length - 1) {
-            endModal.style.display = 'block';
-            quizContainer.style.display = 'none';
-            document.querySelector('#score').textContent = quizGame.totalScore + " points!"
-        } else {
-            //give currentScore points to the totalScore and let user know how much they got
-            quizGame.totalScore += quizGame.currentScore
-            userFeedback.innerText = "That's correct! You got" + ` ${quizGame.currentScore} points!`
-            //then reset all the buttons and currentScore to 100
-            //update yourScore
-            yourScore.textContent = `Your Score: ${quizGame.totalScore} points`
+            setTimeout(() => {
+                endModal.style.display = 'block';
+                quizContainer.style.display = 'none';
+                document.querySelector('#score').textContent = quizGame.totalScore + " points!"
+            }, 2000)
 
+        } else {
+
+            //update currentScore back to 100
             quizGame.currentScore = 100
-            for (let answer of answers) {
-                answer.setAttribute('disabled', 'true')
-            }
             //wait 2 seconds then call correctAnswer for next question
             setTimeout(correctAnswer, 2000)
 
@@ -106,11 +115,11 @@ const checkAnswer = (event) => {
 
     } else { // this happens when answer is incorrect
 
-        const feedbacks = ["Oh no that's incorrect! let's try again!", "Not quite! let's try again!", "Not what we're looking for, let's try again!", "That's a good guess! but not what we're looking for"]
+        const feedbacks = ["Oh no that's incorrect! let's try again!", "Not quite! let's try again!", "Not what we're looking for! let's try again!", "That's a good guess! but not what we're looking for", "So close! let's give it another shot!"]
         userFeedback.innerText = feedbacks[Math.floor(Math.random() * feedbacks.length)]
         //turn the button off after you guessed wrong answer
         event.target.setAttribute('disabled', 'true')
-        //minus 25 points to the current score
+        //minus 25 points each time the user answered incorrectly
         quizGame.currentScore -= 25
     }
 }

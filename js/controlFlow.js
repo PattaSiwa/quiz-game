@@ -37,6 +37,5 @@ const correctAnswer = () => {
     }
 }
 
-
-
+//Need to create a scoring system
 

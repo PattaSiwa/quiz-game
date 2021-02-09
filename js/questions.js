@@ -33,14 +33,14 @@ class Question {
 
 }
 
-const question1 = new Question("What is this animal?", '1.jpeg', 'Jellyfish')
-const question2 = new Question("What is this animal?", '2.jpeg', 'Shark')
-const question3 = new Question("What is this animal?", '3.jpeg', 'Turtle')
-const question4 = new Question("What is this animal?", '4.jpeg', 'Dolphin')
-const question5 = new Question("What is this animal?", '5.jpeg', 'Octopus')
-const question6 = new Question("What is this animal?", '6.jpeg', 'Whale')
-const question7 = new Question("What is this animal?", '7.jpeg', 'Squid')
-const question8 = new Question("What is this animal?", '8.jpeg', 'Crab')
+const question1 = new Question("What is this sea creature?", '1.jpeg', 'Jellyfish')
+const question2 = new Question("What is this sea creature?", '2.jpeg', 'Shark')
+const question3 = new Question("What is this sea creature?", '3.jpeg', 'Turtle')
+const question4 = new Question("What is this sea creature?", '4.jpeg', 'Dolphin')
+const question5 = new Question("What is this sea creature?", '5.jpeg', 'Octopus')
+const question6 = new Question("What is this sea creature?", '6.jpeg', 'Whale')
+const question7 = new Question("What is this sea creature?", '7.jpeg', 'Squid')
+const question8 = new Question("What is this sea creature?", '8.jpeg', 'Crab')
 
 
 

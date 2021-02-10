@@ -21,8 +21,8 @@ cursor: pointer;
     font-size: 2rem;
     margin: 10% auto;
     padding: 20px;
-    width: 40%;
-    height: 400px;
+    width: 80vh;
+    height: 50vh;
     
     border-radius: 40px;
     -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
@@ -65,6 +65,10 @@ cursor: pointer;
     display: none;
 }
 
+#retakeQuiz {
+    padding: 5px;
+}
+
 /* start modal style */
 
 
@@ -73,7 +77,7 @@ cursor: pointer;
 }
 
 #startQuiz {
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
 
@@ -82,7 +86,10 @@ cursor: pointer;
 .modalContent{
     font-size: 1.4rem;
     width: 90%;
-    margin-top: 20%;
+    margin-top: 5%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
     
 }
 ul {
@@ -105,8 +112,46 @@ ul {
 
 }
 
-@media only screen and (max-width: 830px){
+@media only screen and (max-width: 900px){
     #helpModal li{
         font-size: 1.2rem;
     }
+
+    #endModal {
+        font-size: 1rem;
+    }
+
+    #startQuiz {
+        margin-top: 20px;
+    }
+}
+
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+    .modalContent {
+        width: 100%;
+        margin: 5% 0;
+        height: 100vh;
+    }
+
+}
+
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+
+    .modalContent {
+        width: 100%;
+        margin: 5% 0;
+        height: 80%;
+    }
+
 }

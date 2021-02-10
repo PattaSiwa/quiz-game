@@ -15,7 +15,7 @@
     <div id="startModal" class="modal">
         <div class="modalContent">
             <div class="welcome">
-                <p>Welcome to the Quiz Game!</p>
+                <p id="welcomeText">Welcome to the Quiz Game!</p>
                 <p>What subject would you like?</p>
             </div>
 
@@ -31,9 +31,13 @@
             <ul>
                 <li>Answer by selecting one of the multiple choices. Don't worry if you don't get it right the first
                     time. You can try again!</li>
-                <li>Restart the quiz by selecting the button below</li>
+                <li>Restart the quiz or select a different topic by returning to main menu</li>
             </ul>
-            <button class="restartQuiz">Restart Quiz</button>
+            <div class='helpButtons'>
+                <button class="restartQuiz">Restart Quiz</button>
+                <button class="mainMenu">Main Menu</button>
+            </div>
+
         </div>
     </div>
 
@@ -44,6 +48,7 @@
             <h3>You Got</h3>
             <h3 id="score"></h3>
             <button id="retakeQuiz">Take The Quiz Again!</button>
+            <button class="mainMenu">Main Menu</button>
         </div>
     </div>
 

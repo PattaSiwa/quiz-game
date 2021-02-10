@@ -21,6 +21,9 @@ const quizGame = {
     totalScore: 0
 }
 
+//Putting all the functions in one place 
+
+
 //create a function that will populate the page by passing in the question object
 const quizDisplay = (quest) => {
     //make the answers
@@ -33,7 +36,7 @@ const quizDisplay = (quest) => {
     picContainer.appendChild(picture)
     //shuffle the arrays before displaying
 
-    //if it's a multiple choice then do this 
+    //if it's a multiple choice with 4 options run this
     if (quest.answers.length === 4) {
         const shuffledAnswer = shuffleArray(quest.answers)
         let i = 0
@@ -53,7 +56,7 @@ const quizDisplay = (quest) => {
 }
 
 
-//this is a Fisher-Yates algorith I found --- looping through 
+//this is a Fisher-Yates algorithm to shuffle arrays when needed
 
 const shuffleArray = function (array) {
     const copy = array.slice();
@@ -67,20 +70,22 @@ const shuffleArray = function (array) {
 };
 
 //starting the quiz
-//to start the quiz we need to display one of the questions
-// need a function that will take the questions Array, shuffle it and then intiate the quiz
-
+//set the game object up by grabbing 10 questions to put in the array and displaying the first question
 
 const startQuiz = () => {
     quizContainer.style.display = 'block'
+    //shuffling the 15 questions and grabbing the first 10 
     const shuffledQuestions = shuffleArray(quizGame.questionSet.questionsArray)
-    //grabbing 10 questions after shuffling them
     for (let i = 1; i <= 10; i++) {
         quizGame.randQuestions.push(shuffledQuestions[i])
     }
     quizGame.currentQuestion = quizGame.randQuestions[quizGame.numberOfQuestion]
     quizDisplay(quizGame.currentQuestion)
 }
+
+
+//Game interface
+
 
 //if the answer is correct then we can move on to the next question. 
 const correctAnswer = () => {
@@ -150,19 +155,16 @@ const checkAnswer = (event) => {
     }
 }
 
-// run checkAnswer on each button
+// Add event listeners on each answer buttons and then run checkAnswer when they're clicked.
 for (let answer of answers) {
     answer.addEventListener('click', checkAnswer)
 }
+
 
 const restartGameStat = () => {
     quizGame.numberOfQuestion = 0
     quizGame.randQuestions = []
     quizGame.currentQuestion = {}
-    const shuffledQuestions = shuffleArray(quizGame.questionSet.questionsArray)
-    for (let i = 1; i <= 10; i++) {
-        quizGame.randQuestions.push(shuffledQuestions[i])
-    }
     quizGame.currentScore = 100
     quizGame.totalScore = 0
     userFeedback.innerText = "Pick an answer below"

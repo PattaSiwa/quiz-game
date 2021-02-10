@@ -33,15 +33,28 @@ restartBtn.addEventListener('click', () => {
     restartQuiz()
 })
 
-const mainMenu1 = document.querySelector('.mainMenu')
 
-mainMenu1.addEventListener('click', () => {
+//Main Menu Buttons on Help and End modals
+const mainMenusBtn = document.querySelectorAll('.mainMenu')
+//both button take you back to the main menu and restart game object
+for (let mainBtn of mainMenusBtn) {
+    mainBtn.addEventListener('click', () => {
+
+        document.querySelector('#welcomeText').textContent = "Main Menu"
+        quizContainer.style.display = 'none'
+        document.querySelector('#startModal').style.display = 'block'
+        restartGameStat()
+    })
+
+}
+
+//Each button close the modal they are responsible for
+mainMenusBtn[0].addEventListener('click', () => {
     document.querySelector('#helpModal').style.display = 'none'
-    document.querySelector('#welcomeText').textContent = "Main Menu"
-    document.querySelector('#startModal').style.display = 'block'
-    restartGameStat()
 })
-
+mainMenusBtn[1].addEventListener('click', () => {
+    document.querySelector('#endModal').style.display = 'none'
+})
 
 
 //endModal 
@@ -52,11 +65,7 @@ retakeBtn.addEventListener('click', () => {
     restartQuiz()
 })
 
-const mainMenu2 = document.querySelectorAll('.mainMenu')[1]
 
-mainMenu2.addEventListener('click', () => {
-    document.querySelector('#endModal').style.display = 'none'
-    document.querySelector('#welcomeText').textContent = "Main Menu"
-    document.querySelector('#startModal').style.display = 'block'
-    restartGameStat()
-})
+
+
+

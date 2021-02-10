@@ -1,4 +1,4 @@
-//template for questions using Class
+//template for questions using Class/ extends Class
 //each question should take in the question, image and the correct answer
 
 

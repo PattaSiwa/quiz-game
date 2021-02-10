@@ -1,9 +1,9 @@
 //template for questions using Class
 //each question should take in the question, image and the correct answer
 
+
 //create an array of possible answers
 
-const possibleAnswers = ['Jellyfish', 'Turtle', 'Octopus', 'Swordfish', 'Squid', 'Shark', 'Dolphin', 'Whale', 'Crab']
 
 class Question {
     //will take in the 3 arguments to create a question class. 1) the question itself 2) the corresponding image that's in the img folder(prefixed) 3) the correct answer to the question.
@@ -18,7 +18,7 @@ class Question {
 
     makeAnswerKeys() {
         //randomize the answer key
-        const newAnswers = shuffleArray(possibleAnswers)
+        const newAnswers = shuffleArray(quizGame.questionSet.possibleAnswers)
 
         newAnswers.forEach((answer) => {
             //if it's less than 4 items in the array and it's not the same as the correct answer, then push it to the array
@@ -33,16 +33,4 @@ class Question {
 
 }
 
-const question1 = new Question("What is this sea creature?", 'ocean/1.jpeg', 'Jellyfish')
-const question2 = new Question("What is this sea creature?", 'ocean/2.jpeg', 'Shark')
-const question3 = new Question("What is this sea creature?", 'ocean/3.jpeg', 'Turtle')
-const question4 = new Question("What is this sea creature?", 'ocean/4.jpeg', 'Dolphin')
-const question5 = new Question("What is this sea creature?", 'ocean/5.jpeg', 'Octopus')
-const question6 = new Question("What is this sea creature?", 'ocean/6.jpeg', 'Whale')
-const question7 = new Question("What is this sea creature?", 'ocean/7.jpeg', 'Squid')
-const question8 = new Question("What is this sea creature?", 'ocean/8.jpeg', 'Crab')
 
-
-
-// const questionsArray = [question1, question2, question3, question4, question5, question6, question7, question8]
-const questionsArray = [question1, question2]

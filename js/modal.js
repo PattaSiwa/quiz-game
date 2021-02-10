@@ -1,10 +1,11 @@
 //These modals are the control flow of the game
 
 //Start Modal
-const startBtn = document.querySelector('#startQuiz')
+const startOcean = document.querySelector('#startOcean')
 
-startBtn.addEventListener('click', () => {
+startOcean.addEventListener('click', () => {
     document.querySelector('#startModal').style.display = 'none'
+    quizGame.questionSet = oceanQuestions
     startQuiz()
 
 })

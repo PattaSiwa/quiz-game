@@ -13,6 +13,7 @@ const yourScore = document.querySelector('#yourScore')
 //game object
 
 const quizGame = {
+    questionSet: {},
     randQuestions: [],
     currentQuestion: {},
     numberOfQuestion: 0,
@@ -61,7 +62,7 @@ const shuffleArray = function (array) {
 
 const startQuiz = () => {
     quizContainer.style.display = 'block'
-    quizGame.randQuestions = shuffleArray(questionsArray)
+    quizGame.randQuestions = shuffleArray(quizGame.questionSet.questionsArray)
     quizGame.currentQuestion = quizGame.randQuestions[quizGame.numberOfQuestion]
     quizDisplay(quizGame.currentQuestion)
 }
@@ -134,7 +135,7 @@ const restartQuiz = () => {
     quizGame.numberOfQuestion = 0
     quizGame.randQuestions = []
     quizGame.currentQuestion = {}
-    quizGame.randQuestions = shuffleArray(questionsArray)
+    quizGame.randQuestions = shuffleArray(quizGame.questionSet.questionsArray)
     quizGame.currentScore = 100
     quizGame.totalScore = 0
     userFeedback.innerText = "Pick an answer below"

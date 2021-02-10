@@ -20,14 +20,25 @@ Pictures taken from unsplash.com and pixay.com
 User Story
 
 User will be able to see a picture/question 
+
 User will be able to pick from multiple choices(4 or true or false)
+
 User will be able to pick correct answer from one of the choices.
+
 User will get feedback if they picked the wrong answer
+
 User will get feedback if the right answer is correct
+
 User will get a new question/picture once correct answer has been chosen
+
 User will receive points base on the number of attempts to answer 1 highest – 4 is lowest
+
 User will not get repeated question in a quiz set
+
 User will receive a total score after all the questions have been answered
+
 User will be able to play the game again.
+
 User will receive the same set of questions with different randomized answers position
+
 User will be able to pick a subject they want to be quized on

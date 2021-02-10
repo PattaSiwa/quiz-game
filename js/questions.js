@@ -2,8 +2,6 @@
 //each question should take in the question, image and the correct answer
 
 
-//create an array of possible answers
-
 
 class Question {
     //will take in the 3 arguments to create a question class. 1) the question itself 2) the corresponding image that's in the img folder(prefixed) 3) the correct answer to the question.
@@ -32,6 +30,8 @@ class Question {
     }
 
 }
+
+//true or false questions will be an extension of the Question class
 
 class TrueOrFalse extends Question {
     constructor(question, img, correctAnswer) {

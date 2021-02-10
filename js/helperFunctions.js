@@ -161,6 +161,7 @@ const restartGameStat = () => {
     userFeedback.innerText = "Pick an answer below"
     for (let answer of answers) {
         answer.removeAttribute('disabled')
+        answer.style.display = 'inline-block'
     }
     yourScore.textContent = "Your Score:"
 }

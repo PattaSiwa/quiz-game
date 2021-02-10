@@ -10,6 +10,15 @@ startOcean.addEventListener('click', () => {
 
 })
 
+const startDino = document.querySelector('#startDino')
+startDino.addEventListener('click', () => {
+    document.querySelector('#startModal').style.display = 'none'
+    quizGame.questionSet = dinoQuestions
+    startQuiz()
+
+})
+
+
 
 //Help Modal 
 

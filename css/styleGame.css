@@ -5,10 +5,10 @@ main {
 }
 
 img {
-    width: 380px;
-    height:380px;
+    width: 450px;
+    height:350px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 10px;
     box-shadow: 4px 3px 5px 1px rgba(0,0,0,0.53);
     -webkit-box-shadow: 4px 3px 5px 1px rgba(0,0,0,0.53);
     -moz-box-shadow: 4px 3px 5px 1px rgba(0,0,0,0.53);

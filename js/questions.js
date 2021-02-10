@@ -33,4 +33,19 @@ class Question {
 
 }
 
+class TrueOrFalse extends Question {
+    constructor(question, img, correctAnswer) {
+        super(question, img, correctAnswer)
+        this.answers = []
+    }
+
+    makeAnswerKeys() {
+        if (this.answers.length < 2) {
+            this.answers.push('True')
+            this.answers.push('False')
+        }
+    }
+
+}
+
 

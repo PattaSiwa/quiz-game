@@ -32,12 +32,23 @@ const quizDisplay = (quest) => {
     //append the picture to the picture container
     picContainer.appendChild(picture)
     //shuffle the arrays before displaying
-    const shuffledAnswer = shuffleArray(quest.answers)
-    let i = 0
-    for (let answer of answers) {
-        answer.textContent = shuffledAnswer[i]
-        i++
+
+    //if it's a multiple choice then do this 
+    if (quest.answers.length === 4) {
+        const shuffledAnswer = shuffleArray(quest.answers)
+        let i = 0
+        for (let answer of answers) {
+            answer.textContent = shuffledAnswer[i]
+            i++
+        }
+        //if its a true or false then only show two buttons that say true or false
+    } else if (quest.answers.length === 2) {
+        answers[0].textContent = 'True'
+        answers[1].textContent = 'False'
+        answers[2].style.display = 'none'
+        answers[3].style.display = 'none'
     }
+
 
 }
 
@@ -72,11 +83,13 @@ const correctAnswer = () => {
     userFeedback.innerText = 'Pick an answer below'
     quizGame.numberOfQuestion++
     quizGame.currentQuestion = quizGame.randQuestions[quizGame.numberOfQuestion]
-    quizDisplay(quizGame.currentQuestion)
     //reset all the buttons
     for (let answer of answers) {
         answer.removeAttribute('disabled')
+        answer.style.display = 'inline-block'
     }
+    quizDisplay(quizGame.currentQuestion)
+
 }
 
 const disableAnswers = () => {
@@ -120,8 +133,16 @@ const checkAnswer = (event) => {
         userFeedback.innerText = feedbacks[Math.floor(Math.random() * feedbacks.length)]
         //turn the button off after you guessed wrong answer
         event.target.setAttribute('disabled', 'true')
+
+        //minus 75 points for true or false 
         //minus 25 points each time the user answered incorrectly
-        quizGame.currentScore -= 25
+        if (quizGame.currentQuestion.correctAnswer === 'True' || quizGame.currentQuestion.correctAnswer === 'False') {
+            quizGame.currentScore -= 75
+        } else {
+            quizGame.currentScore -= 25
+        }
+
+
     }
 }
 
@@ -130,8 +151,7 @@ for (let answer of answers) {
     answer.addEventListener('click', checkAnswer)
 }
 
-
-const restartQuiz = () => {
+const restartGameStat = () => {
     quizGame.numberOfQuestion = 0
     quizGame.randQuestions = []
     quizGame.currentQuestion = {}
@@ -143,10 +163,11 @@ const restartQuiz = () => {
         answer.removeAttribute('disabled')
     }
     yourScore.textContent = "Your Score:"
-    startQuiz()
 }
 
-    // currentQuestion = randQuestions[numberOfQuestion]
-    // quizDisplay(randQuestions[numberOfQuestion])
-    // const feedback = document.querySelector('.feedback')
+
+const restartQuiz = () => {
+    restartGameStat()
+    startQuiz()
+}
 

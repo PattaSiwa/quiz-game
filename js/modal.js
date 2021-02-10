@@ -39,7 +39,7 @@ mainMenu1.addEventListener('click', () => {
     document.querySelector('#helpModal').style.display = 'none'
     document.querySelector('#welcomeText').textContent = "Main Menu"
     document.querySelector('#startModal').style.display = 'block'
-
+    restartGameStat()
 })
 
 
@@ -58,5 +58,5 @@ mainMenu2.addEventListener('click', () => {
     document.querySelector('#endModal').style.display = 'none'
     document.querySelector('#welcomeText').textContent = "Main Menu"
     document.querySelector('#startModal').style.display = 'block'
-
+    restartGameStat()
 })

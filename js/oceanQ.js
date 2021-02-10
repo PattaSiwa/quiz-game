@@ -7,8 +7,11 @@ const question5 = new Question("What is this sea creature?", 'ocean/5.jpeg', 'Oc
 const question6 = new Question("What is this sea creature?", 'ocean/6.jpeg', 'Whale')
 const question7 = new Question("What is this sea creature?", 'ocean/7.jpeg', 'Squid')
 const question8 = new Question("What is this sea creature?", 'ocean/8.jpeg', 'Crab')
+const question9 = new TrueOrFalse("Are Crabs Delicious?", 'ocean/8.jpeg', 'True')
 
 const oceanQuestions = {
     possibleAnswers: ['Jellyfish', 'Turtle', 'Octopus', 'Swordfish', 'Squid', 'Shark', 'Dolphin', 'Whale', 'Crab'],
-    questionsArray: [question1, question2, question3, question4, question5, question6, question7, question8]
+    // questionsArray: [question1, question2, question3, question4, question5, question6, question7, question8,question9]
+
+    questionsArray: [question1, question2, question9]
 }

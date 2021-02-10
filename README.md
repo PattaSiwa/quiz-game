@@ -1,8 +1,10 @@
 # quiz-game
-Why I made it:
+Why I chose to make this project
+
 I am currently working as a Youth Support Specailist. I provide direct support to young adults living with disabilities. 
 I created this project because I wanted an application that I can use with my students on days we have to work together remotely.
 
+Project Overview
 
 This project is a quiz game that can be easily customized. There are three types of questions that are Classes and extendsions. 
 There are two types of multiple choice questions and true or false question. The subjects can be easily added by using the question templates and following the laid out object creation for each subject you want to add.
@@ -15,7 +17,11 @@ Correct answer will recieve a praise and points. As someone who studied psycholo
 
 Technologies: HTML, CSS and JavaScript 
 
+
 Pictures taken from unsplash.com and pixay.com
+
+
+
 
 User Story
 

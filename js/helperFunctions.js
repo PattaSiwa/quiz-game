@@ -73,7 +73,11 @@ const shuffleArray = function (array) {
 
 const startQuiz = () => {
     quizContainer.style.display = 'block'
-    quizGame.randQuestions = shuffleArray(quizGame.questionSet.questionsArray)
+    const shuffledQuestions = shuffleArray(quizGame.questionSet.questionsArray)
+    //grabbing 10 questions after shuffling them
+    for (let i = 1; i <= 10; i++) {
+        quizGame.randQuestions.push(shuffledQuestions[i])
+    }
     quizGame.currentQuestion = quizGame.randQuestions[quizGame.numberOfQuestion]
     quizDisplay(quizGame.currentQuestion)
 }
@@ -155,7 +159,10 @@ const restartGameStat = () => {
     quizGame.numberOfQuestion = 0
     quizGame.randQuestions = []
     quizGame.currentQuestion = {}
-    quizGame.randQuestions = shuffleArray(quizGame.questionSet.questionsArray)
+    const shuffledQuestions = shuffleArray(quizGame.questionSet.questionsArray)
+    for (let i = 1; i <= 10; i++) {
+        quizGame.randQuestions.push(shuffledQuestions[i])
+    }
     quizGame.currentScore = 100
     quizGame.totalScore = 0
     userFeedback.innerText = "Pick an answer below"

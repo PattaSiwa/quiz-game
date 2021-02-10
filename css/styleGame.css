@@ -5,8 +5,8 @@ main {
 }
 
 img {
-    width: 400px;
-    height:400px;
+    width: 380px;
+    height:380px;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 4px 3px 5px 1px rgba(0,0,0,0.53);
@@ -51,7 +51,7 @@ button:focus {
 .quizContainer {
     display: none;
     max-width: 800px;
-    height: 800px;
+    height: auto;
     width: 70%;
     border-radius: 20px;
     margin: 0 auto;
@@ -84,7 +84,7 @@ button:focus {
 .answer{
     width: 50%;
     margin-top: 20px;
-    height: 40px;
+    height: auto;
     border-radius: 10px;
     border: none;
 }

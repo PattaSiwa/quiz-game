@@ -48,4 +48,13 @@ class TrueOrFalse extends Question {
 
 }
 
+class QuestionType2 extends Question {
+    constructor(question, img, correctAnswer, wrong1, wrong2, wrong3) {
+        super(question, img, correctAnswer)
+        this.answers = [correctAnswer, wrong1, wrong2, wrong3]
+    }
 
+    makeAnswerKeys() {
+        //doesn't have to do anything 
+    }
+}

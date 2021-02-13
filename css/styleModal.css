@@ -108,7 +108,7 @@ cursor: pointer;
     font-size: 1.4rem;
     width: 90%;
     margin-top: 5%;
-    height: 90vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     
@@ -127,6 +127,13 @@ ul {
 
 .restartQuiz {
     margin-top: 30px;
+}
+
+.subjectsContainer{
+    flex-direction: column;
+}
+.subject {
+    margin-top: 5px;
 }
 
 
@@ -158,6 +165,9 @@ ul {
         width: 100%;
         margin: 5% 0;
         height: 100vh;
+    }
+    .subjectsContainer{
+        flex-direction: column;
     }
 
 }
